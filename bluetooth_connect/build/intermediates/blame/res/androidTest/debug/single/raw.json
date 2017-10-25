@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "D:\\00_Code_From_Github\\BlueToothTest\\bluetooth_connect\\build\\intermediates\\res\\merged\\androidTest\\debug\\raw\\recv.mp3",
+        "source": "D:\\00_Code_From_Github\\BlueToothTest\\bluetooth_connect\\build\\intermediates\\bundles\\debug\\res\\raw\\recv.mp3"
+    },
+    {
+        "merged": "D:\\00_Code_From_Github\\BlueToothTest\\bluetooth_connect\\build\\intermediates\\res\\merged\\androidTest\\debug\\raw\\send.mp3",
+        "source": "D:\\00_Code_From_Github\\BlueToothTest\\bluetooth_connect\\build\\intermediates\\bundles\\debug\\res\\raw\\send.mp3"
+    },
+    {
+        "merged": "D:\\00_Code_From_Github\\BlueToothTest\\bluetooth_connect\\build\\intermediates\\res\\merged\\androidTest\\debug\\raw\\play_completed.mp3",
+        "source": "D:\\00_Code_From_Github\\BlueToothTest\\bluetooth_connect\\build\\intermediates\\bundles\\debug\\res\\raw\\play_completed.mp3"
+    },
+    {
+        "merged": "D:\\00_Code_From_Github\\BlueToothTest\\bluetooth_connect\\build\\intermediates\\res\\merged\\androidTest\\debug\\raw\\error.wav",
+        "source": "D:\\00_Code_From_Github\\BlueToothTest\\bluetooth_connect\\build\\intermediates\\bundles\\debug\\res\\raw\\error.wav"
+    }
+]

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <string name="action_settings">Settings</string>
+    <string name="app_name">BluetoothChat</string>
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    <style name="style_chat_text">
+        <item name="android:textSize">18sp</item>
+        <item name="android:password">true</item>
+    </style>
+    <style name="style_common_btn">
+        <item name="android:textColor">#FFFFFFFF</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:padding">6dp</item>
+        
+    </style>
+    <style name="style_date_text">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">#FFCDCACA</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">10sp</item>
+    </style>
+    <style name="style_target_text">
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="style_username_text">
+        <item name="android:textSize">18sp</item>
+    </style>
+</resources>

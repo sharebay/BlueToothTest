@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.kemov.vam.bluetoothtest.MainActivity">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tvHelloWord"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:gravity="center"
+            android:text="Hello World!"/>
+        <Button
+            android:id="@+id/btnStartBlueT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="开启/关闭蓝牙"/>
+        <Button
+            android:id="@+id/btnScanBlueToothDevices"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="扫描蓝牙设备"/>
+    </LinearLayout>
+
+
+
+</android.support.design.widget.CoordinatorLayout>

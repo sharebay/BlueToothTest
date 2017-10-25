@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "D:\\00_Code_From_Github\\BlueToothTest\\bluetooth_connect\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\ic_launcher.png",
+        "source": "D:\\00_Code_From_Github\\BlueToothTest\\bluetooth_connect\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\00_Code_From_Github\\BlueToothTest\\bluetooth_connect\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\app_elec_ic.png",
+        "source": "D:\\00_Code_From_Github\\BlueToothTest\\bluetooth_connect\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\app_elec_ic.png"
+    },
+    {
+        "merged": "D:\\00_Code_From_Github\\BlueToothTest\\bluetooth_connect\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\icon.png",
+        "source": "D:\\00_Code_From_Github\\BlueToothTest\\bluetooth_connect\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\icon.png"
+    }
+]

@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "D:\\00_Code_From_Github\\BlueToothTest\\bluetooth_connect\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\activity_select_device.xml",
+        "source": "D:\\00_Code_From_Github\\BlueToothTest\\bluetooth_connect\\build\\intermediates\\bundles\\debug\\res\\layout\\activity_select_device.xml"
+    },
+    {
+        "merged": "D:\\00_Code_From_Github\\BlueToothTest\\bluetooth_connect\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\grid_view_item.xml",
+        "source": "D:\\00_Code_From_Github\\BlueToothTest\\bluetooth_connect\\build\\intermediates\\bundles\\debug\\res\\layout\\grid_view_item.xml"
+    },
+    {
+        "merged": "D:\\00_Code_From_Github\\BlueToothTest\\bluetooth_connect\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\activity_chat.xml",
+        "source": "D:\\00_Code_From_Github\\BlueToothTest\\bluetooth_connect\\build\\intermediates\\bundles\\debug\\res\\layout\\activity_chat.xml"
+    },
+    {
+        "merged": "D:\\00_Code_From_Github\\BlueToothTest\\bluetooth_connect\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\emo_layout.xml",
+        "source": "D:\\00_Code_From_Github\\BlueToothTest\\bluetooth_connect\\build\\intermediates\\bundles\\debug\\res\\layout\\emo_layout.xml"
+    },
+    {
+        "merged": "D:\\00_Code_From_Github\\BlueToothTest\\bluetooth_connect\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\chat_list_item_layout.xml",
+        "source": "D:\\00_Code_From_Github\\BlueToothTest\\bluetooth_connect\\build\\intermediates\\bundles\\debug\\res\\layout\\chat_list_item_layout.xml"
+    },
+    {
+        "merged": "D:\\00_Code_From_Github\\BlueToothTest\\bluetooth_connect\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\activity_download.xml",
+        "source": "D:\\00_Code_From_Github\\BlueToothTest\\bluetooth_connect\\build\\intermediates\\bundles\\debug\\res\\layout\\activity_download.xml"
+    }
+]

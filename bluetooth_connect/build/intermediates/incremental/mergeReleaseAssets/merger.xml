@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="D:\00_Code_From_Github\BlueToothTest\bluetooth_connect\src\main\assets"><file name="dladdr.png" path="D:\00_Code_From_Github\BlueToothTest\bluetooth_connect\src\main\assets\dladdr.png"/></source><source path="D:\00_Code_From_Github\BlueToothTest\bluetooth_connect\build\generated\assets\shaders\release"/></dataSet><dataSet config="release"><source path="D:\00_Code_From_Github\BlueToothTest\bluetooth_connect\src\release\assets"/></dataSet></merger>

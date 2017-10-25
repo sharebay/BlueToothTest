@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="net.flyget.bluetoothchat.test" >
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="25" />
+
+    <instrumentation
+        android:name="android.test.InstrumentationTestRunner"
+        android:functionalTest="false"
+        android:handleProfiling="false"
+        android:label="Tests for net.flyget.bluetoothchat.test"
+        android:targetPackage="net.flyget.bluetoothchat.test" />
+    <!-- <uses-sdk -->
+    <!-- android:minSdkVersion="10" -->
+    <!-- android:targetSdkVersion="22" /> -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name" >
+        <uses-library android:name="android.test.runner" />
+
+        <activity
+            android:name="net.flyget.bluetoothchat.activity.bluetoothMainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" >
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity
+            android:name="net.flyget.bluetoothchat.activity.AboutActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <service android:name="net.flyget.bluetoothchat.task.TaskService" >
+        </service>
+
+        <activity
+            android:name="net.flyget.bluetoothchat.activity.SelectDevice"
+            android:screenOrientation="portrait" >
+        </activity>
+    </application>
+
+</manifest>

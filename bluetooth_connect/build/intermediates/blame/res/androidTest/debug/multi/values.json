@@ -1,0 +1,230 @@
+[
+    {
+        "outputFile": "D:\\00_Code_From_Github\\BlueToothTest\\bluetooth_connect\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 57,
+                    "endOffset": 108
+                },
+                "from": {
+                    "file": "D:\\00_Code_From_Github\\BlueToothTest\\bluetooth_connect\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 57,
+                        "endOffset": 108
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 113,
+                    "endColumn": 55,
+                    "endOffset": 164
+                },
+                "from": {
+                    "file": "D:\\00_Code_From_Github\\BlueToothTest\\bluetooth_connect\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 113,
+                        "endColumn": 55,
+                        "endOffset": 164
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 169,
+                    "endColumn": 52,
+                    "endOffset": 217
+                },
+                "from": {
+                    "file": "D:\\00_Code_From_Github\\BlueToothTest\\bluetooth_connect\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 169,
+                        "endColumn": 52,
+                        "endOffset": 217
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 222,
+                    "endColumn": 50,
+                    "endOffset": 268
+                },
+                "from": {
+                    "file": "D:\\00_Code_From_Github\\BlueToothTest\\bluetooth_connect\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 222,
+                        "endColumn": 50,
+                        "endOffset": 268
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 273,
+                    "endLine": 12,
+                    "endColumn": 12,
+                    "endOffset": 559
+                },
+                "from": {
+                    "file": "D:\\00_Code_From_Github\\BlueToothTest\\bluetooth_connect\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 273,
+                        "endLine": 12,
+                        "endColumn": 12,
+                        "endOffset": 559
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 564,
+                    "endLine": 15,
+                    "endColumn": 12,
+                    "endOffset": 719
+                },
+                "from": {
+                    "file": "D:\\00_Code_From_Github\\BlueToothTest\\bluetooth_connect\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 564,
+                        "endLine": 15,
+                        "endColumn": 12,
+                        "endOffset": 719
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 724,
+                    "endLine": 19,
+                    "endColumn": 12,
+                    "endOffset": 867
+                },
+                "from": {
+                    "file": "D:\\00_Code_From_Github\\BlueToothTest\\bluetooth_connect\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 724,
+                        "endLine": 19,
+                        "endColumn": 12,
+                        "endOffset": 867
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 872,
+                    "endLine": 25,
+                    "endColumn": 12,
+                    "endOffset": 1079
+                },
+                "from": {
+                    "file": "D:\\00_Code_From_Github\\BlueToothTest\\bluetooth_connect\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 872,
+                        "endLine": 25,
+                        "endColumn": 12,
+                        "endOffset": 1079
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 26,
+                    "startColumn": 4,
+                    "startOffset": 1084,
+                    "endLine": 31,
+                    "endColumn": 12,
+                    "endOffset": 1333
+                },
+                "from": {
+                    "file": "D:\\00_Code_From_Github\\BlueToothTest\\bluetooth_connect\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 26,
+                        "startColumn": 4,
+                        "startOffset": 1084,
+                        "endLine": 31,
+                        "endColumn": 12,
+                        "endOffset": 1333
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 32,
+                    "startColumn": 4,
+                    "startOffset": 1338,
+                    "endLine": 34,
+                    "endColumn": 12,
+                    "endOffset": 1433
+                },
+                "from": {
+                    "file": "D:\\00_Code_From_Github\\BlueToothTest\\bluetooth_connect\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 32,
+                        "startColumn": 4,
+                        "startOffset": 1338,
+                        "endLine": 34,
+                        "endColumn": 12,
+                        "endOffset": 1433
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 35,
+                    "startColumn": 4,
+                    "startOffset": 1438,
+                    "endLine": 37,
+                    "endColumn": 12,
+                    "endOffset": 1535
+                },
+                "from": {
+                    "file": "D:\\00_Code_From_Github\\BlueToothTest\\bluetooth_connect\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 35,
+                        "startColumn": 4,
+                        "startOffset": 1438,
+                        "endLine": 37,
+                        "endColumn": 12,
+                        "endOffset": 1535
+                    }
+                }
+            }
+        ]
+    }
+]
