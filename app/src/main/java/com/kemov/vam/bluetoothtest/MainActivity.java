@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
@@ -24,6 +25,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import net.flyget.bluetoothchat.activity.bluetoothMainActivity;
+
+import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
@@ -77,8 +80,18 @@ public class MainActivity extends AppCompatActivity {
                     ProgressDialog progressDialog = new ProgressDialog(mCtx);// 创建进度对话框对象
                     progressDialog.setTitle("搜索蓝牙设备"); // 设置标题
                     progressDialog.setMessage("搜索中..."); // 设置消息
+                    progressDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+                        @Override
+                        public void onDismiss(DialogInterface dialog) {
+                            getDefaultBlueToothAdapter().cancelDiscovery();
+                            Set<BluetoothDevice> pairedDevices;
+                            pairedDevices = getDefaultBlueToothAdapter().getBondedDevices();
+                            Toast.makeText(mCtx, "搜索到的设备个数为："+pairedDevices.size(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
                     progressDialog.show(); // 显示进度条
-                    //setProgressBarIndeterminateVisibility(true);
+
+
                 }
 
 
