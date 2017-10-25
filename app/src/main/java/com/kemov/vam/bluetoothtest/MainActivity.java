@@ -20,12 +20,17 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import net.flyget.bluetoothchat.activity.bluetoothMainActivity;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
@@ -35,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     Context mCtx;
     Button startBT = null;
     Button btnScanBlueToothDevices = null;
+    Button btnShowBlueToothDevicesList = null;
     TextView tvHelloWord = null;
     CoordinatorLayout layoutRoot = null;
 
@@ -97,6 +103,24 @@ public class MainActivity extends AppCompatActivity {
 
                 //当扫描的蓝牙设备则做出相应
                 //afterScanedSomeDevices(getIntent());
+            }
+        });
+
+        btnShowBlueToothDevicesList = (Button) findViewById(R.id.btnShowBlueToothDevicesList);
+        btnShowBlueToothDevicesList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //获取扫描的蓝牙设备
+                Set<BluetoothDevice> pairedDevices = getDefaultBlueToothAdapter().getBondedDevices();
+
+                List<String> deviceNames = new ArrayList<String>();
+                if (pairedDevices.iterator().hasNext()){
+                    //deviceNames.add(pairedDevices.iterator().next().getName());
+                }
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(mCtx);
+                builder.setItems((String[])deviceNames.toArray(),null);
+                builder.show();
             }
         });
     }

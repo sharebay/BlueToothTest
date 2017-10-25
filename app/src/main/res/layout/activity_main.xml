@@ -30,6 +30,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="扫描蓝牙设备"/>
+        <Button
+            android:id="@+id/btnShowBlueToothDevicesList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="显示扫描到的蓝牙设备"/>
     </LinearLayout>
 
 
