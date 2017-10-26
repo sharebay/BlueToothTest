@@ -30,6 +30,7 @@ import android.widget.Toast;
 import net.flyget.bluetoothchat.activity.bluetoothMainActivity;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -114,12 +115,24 @@ public class MainActivity extends AppCompatActivity {
                 Set<BluetoothDevice> pairedDevices = getDefaultBlueToothAdapter().getBondedDevices();
 
                 List<String> deviceNames = new ArrayList<String>();
-                if (pairedDevices.iterator().hasNext()){
-                    //deviceNames.add(pairedDevices.iterator().next().getName());
+
+                Iterator<BluetoothDevice> iterator =  pairedDevices.iterator();
+                while (iterator.hasNext()){
+                    BluetoothDevice device = iterator.next();
+                    if (device.getAddress() != null){
+                        deviceNames.add(device.getName()+"("+device.getAddress()+")");
+                    }else {
+                        deviceNames.add(device.getName());
+                    }
+                }
+                String Names[] = new String[deviceNames.size()];
+                for (int i = 0;i<deviceNames.size();i++){
+                    Names[i] = deviceNames.get(i);
                 }
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(mCtx);
-                builder.setItems((String[])deviceNames.toArray(),null);
+                builder.setTitle("扫描到的设备列表");
+                builder.setItems(Names,null);
                 builder.show();
             }
         });
