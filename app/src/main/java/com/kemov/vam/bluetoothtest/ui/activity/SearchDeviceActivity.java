@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.kemov.vam.bluetoothtest.R;
 import com.kemov.vam.bluetoothtest.commons.listview.CommonAdapterHelper.CommonAdapter;
 import com.kemov.vam.bluetoothtest.commons.listview.CommonAdapterHelper.ViewHolder;
+import com.kemov.vam.bluetoothtest.utils.ClsUtils;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
@@ -91,6 +92,19 @@ public class SearchDeviceActivity extends Activity implements View.OnClickListen
                 if (bltAdapter.isDiscovering())
                     bltAdapter.cancelDiscovery();
                 connetToDevice(devices.get(position));
+
+                //ClsUtils.createBond(devices.get(position).getClass(),devices.get(position));
+                try {
+                    boolean connected = ClsUtils.createBond(BluetoothDevice.class,devices.get(position));
+                    if(connected){
+                        Toast.makeText(SearchDeviceActivity.this, "配对成功", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(SearchDeviceActivity.this, "配对未成功", Toast.LENGTH_SHORT).show();
+
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
     }
