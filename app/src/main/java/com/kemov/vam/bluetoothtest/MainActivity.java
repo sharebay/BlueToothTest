@@ -27,6 +27,8 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.kemov.vam.bluetoothtest.ui.activity.SearchDeviceActivity;
+
 import net.flyget.bluetoothchat.activity.bluetoothMainActivity;
 
 import java.util.ArrayList;
@@ -42,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
     Button startBT = null;
     Button btnScanBlueToothDevices = null;
     Button btnShowBlueToothDevicesList = null;
+    Button btnSwitchToSearchBltActivity = null;
     TextView tvHelloWord = null;
     CoordinatorLayout layoutRoot = null;
 
@@ -75,14 +78,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(!getDefaultBlueToothAdapter().isDiscovering()){
                     getDefaultBlueToothAdapter().startDiscovery();
-                    // 开始显示进度
-                    /*ProgressBar progressBar = new ProgressBar(mCtx);
-                    progressBar.setEnabled(true);
-                    progressBar.setBackgroundColor(Color.TRANSPARENT);
-                    AlertDialog.Builder builder = new AlertDialog.Builder(mCtx);
-                    builder.setView(progressBar);
-                    builder.show();*/
-
 
                     ProgressDialog progressDialog = new ProgressDialog(mCtx);// 创建进度对话框对象
                     progressDialog.setTitle("搜索蓝牙设备"); // 设置标题
@@ -134,6 +129,17 @@ public class MainActivity extends AppCompatActivity {
                 builder.setTitle("扫描到的设备列表");
                 builder.setItems(Names,null);
                 builder.show();
+            }
+        });
+
+        btnSwitchToSearchBltActivity  = (Button) findViewById(R.id.btnSwitchToSearchBltActivity);
+        btnSwitchToSearchBltActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Snackbar.make(layoutRoot,"进入 蓝牙设备列表",5000).show();
+                Intent intent = new Intent();
+                intent.setClass(mCtx, SearchDeviceActivity.class);
+                startActivity(intent);
             }
         });
     }

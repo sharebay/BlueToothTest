@@ -35,6 +35,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="显示扫描到的蓝牙设备"/>
+        <Button
+            android:id="@+id/btnSwitchToSearchBltActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="跳转到蓝牙搜索的Activity"/>
+
     </LinearLayout>
 
 
