@@ -102,6 +102,10 @@ public class SearchDeviceActivity extends Activity implements View.OnClickListen
         //android.os.Process.killProcess(android.os.Process.myPid());
     }
 
+    /*
+    * 配对/接触配对 参考：
+    * http://blog.csdn.net/love_xsq/article/details/50379330
+    * */
     public void connetToDevice(BluetoothDevice bluetoothDevice){
         try {
             Boolean returnValue = false;
