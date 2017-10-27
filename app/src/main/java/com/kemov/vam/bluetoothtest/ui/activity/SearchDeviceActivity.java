@@ -41,6 +41,7 @@ public class SearchDeviceActivity extends Activity implements View.OnClickListen
     CommonAdapter<BluetoothDevice> adpter;
     List<BluetoothDevice> devices;
 
+
     public static BluetoothSocket btSocket;
     BluetoothAdapter bltAdapter;
 
@@ -91,11 +92,11 @@ public class SearchDeviceActivity extends Activity implements View.OnClickListen
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (bltAdapter.isDiscovering())
                     bltAdapter.cancelDiscovery();
-                connetToDevice(devices.get(position));
+                //~~~~~connetToDevice(devices.get(position));
 
                 //ClsUtils.createBond(devices.get(position).getClass(),devices.get(position));
                 try {
-                    boolean connected = ClsUtils.createBond(BluetoothDevice.class,devices.get(position));
+                    boolean connected = devices.get(position).createBond();//ClsUtils.createBond(BluetoothDevice.class,devices.get(position));
                     if(connected){
                         Toast.makeText(SearchDeviceActivity.this, "配对成功", Toast.LENGTH_SHORT).show();
                     } else {

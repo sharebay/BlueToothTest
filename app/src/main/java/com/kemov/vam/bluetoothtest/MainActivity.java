@@ -27,6 +27,7 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.kemov.vam.bluetoothtest.BlueTooth.ui.BlueToothActivity;
 import com.kemov.vam.bluetoothtest.ui.activity.SearchDeviceActivity;
 
 import net.flyget.bluetoothchat.activity.bluetoothMainActivity;
@@ -53,9 +54,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mCtx = this;
-        intView();
+        Intent intent = new Intent();
+        intent.setClass(this, BlueToothActivity.class);
+        startActivity(intent);
 
+
+
+       /* mCtx = this;
+        intView();*/
     }
 
     private void intView() {

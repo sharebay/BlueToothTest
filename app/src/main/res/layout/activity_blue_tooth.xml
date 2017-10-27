@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bluetooth_rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.kemov.vam.bluetoothtest.BlueTooth.ui.BlueToothActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_SearchNearby"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="搜索附近的蓝牙"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="123"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical">
+            <!--switch开关-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_toLeftOf="@+id/switchBlueTooth"
+                    android:text="蓝牙"/>
+
+                <com.kyleduo.switchbutton.SwitchButton
+                    android:id="@+id/switchBlueTooth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:textColor="#FFFFFF"
+                    app:kswTextOff="Off"
+                    app:kswTextOn="On"
+                    />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lv_BlueToothDevices"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible">
+
+    </ListView>
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh_widget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView_BlueToothDevices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </android.support.v7.widget.RecyclerView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+
+</LinearLayout>
