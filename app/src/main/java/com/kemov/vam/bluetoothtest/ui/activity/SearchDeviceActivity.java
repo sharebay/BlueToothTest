@@ -184,7 +184,11 @@ public class SearchDeviceActivity extends Activity implements View.OnClickListen
             Log.d("BlueToothTestActivity", "开始连接...");
             btSocket.connect();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
+            Log.d("BlueToothTestActivity", "连接失败...");
+            try {
+                btSocket.close();
+            } catch (IOException closeException) {
+            }
             e.printStackTrace();
         }
     }
