@@ -2,6 +2,10 @@ package com.kemov.vam.bluetoothtest.BlueTooth.ui;
 
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Handler;
+import android.os.Message;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -11,9 +15,11 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.kemov.vam.bluetoothtest.BlueTooth.presenter.BlueToothPresenterImpl;
 import com.kemov.vam.bluetoothtest.BlueTooth.presenter.IBlueToothPresenter;
@@ -22,6 +28,8 @@ import com.kemov.vam.bluetoothtest.R;
 import com.kemov.vam.bluetoothtest.commons.listview.CommonAdapterHelper.CommonAdapter;
 import com.kemov.vam.bluetoothtest.commons.listview.CommonAdapterHelper.ViewHolder;
 import com.kemov.vam.bluetoothtest.commons.recyclerview.CommonAdapterHelper.RecyclerViewCommonAdapter;
+import com.kemov.vam.bluetoothtest.utils.BlueToothConstants;
+import com.kemov.vam.bluetoothtest.utils.BlueToothManager;
 import com.kyleduo.switchbutton.SwitchButton;
 
 import java.util.ArrayList;
@@ -37,7 +45,10 @@ import java.util.Set;
 * */
 public class BlueToothActivity extends AppCompatActivity implements IBlueToothView{
     private static final String TAG = "BlueToothActivity";
+
+    Context mCtx;
     LinearLayout bluetooth_rootLayout;
+    Button btn_SearchNearby;
     SwitchButton switchButton;
     ListView lv_BlueToothDevices;
     SwipeRefreshLayout mSwipeRefreshWidget;
@@ -46,7 +57,7 @@ public class BlueToothActivity extends AppCompatActivity implements IBlueToothVi
     LinearLayoutManager mLayoutManager;
     CommonAdapter<BluetoothDevice> adpter;
     RecyclerViewCommonAdapter<BluetoothDevice> recyclerAdpter;
-    List<BluetoothDevice> devices;
+    List<BluetoothDevice> devices = new ArrayList<>();
 
     private IBlueToothPresenter mIBlueToothPresenter;
 
@@ -54,10 +65,57 @@ public class BlueToothActivity extends AppCompatActivity implements IBlueToothVi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_blue_tooth);
-
+        mCtx = this;
         mIBlueToothPresenter = new BlueToothPresenterImpl(this,this);
+
+        BlueToothManager.getInstance().initBltManager(mCtx);
+        ///注册接收蓝牙信息的广播
+        initData();
         initView();
     }
+
+
+    private void initData() {
+        blueToothRegister();
+    }
+
+    //注册蓝牙回调广播
+    private void blueToothRegister() {
+        BlueToothManager.getInstance().registerBlueToothReceiver(this,
+                new BlueToothManager.OnRegisterBltReceiver() {
+
+                    /*
+                    * 当搜索到新的蓝牙设备的时候。
+                    * */
+                    @Override
+                    public void onBluetoothDevice(BluetoothDevice device) {
+
+                        if (devices!= null && !devices.contains(device)){
+                            devices.add(device);
+                            Toast.makeText(mCtx, "查找到一个蓝牙设备"+device.getName(), Toast.LENGTH_SHORT).show();
+                        }
+                        if (adpter != null){
+                            adpter.notifyDataSetChanged();
+                        }
+                    }
+
+                    @Override
+                    public void onConnecting(BluetoothDevice device) {
+                        Toast.makeText(mCtx, "连接中。。", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onConnected(BluetoothDevice device) {
+                        Toast.makeText(mCtx, "已连接！", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onUnConnected(BluetoothDevice device) {
+
+                    }
+                });
+    }
+
 
     @Override
     protected void onResume() {
@@ -95,10 +153,24 @@ public class BlueToothActivity extends AppCompatActivity implements IBlueToothVi
     private void initView() {
         bluetooth_rootLayout = (LinearLayout) findViewById(R.id.bluetooth_rootLayout);
 
+        btn_SearchNearby = (Button) findViewById(R.id.btn_SearchNearby);
+        btn_SearchNearby.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(mCtx, "1蓝牙搜索状态为："+(BluetoothAdapter.getDefaultAdapter().isDiscovering() ? "搜索中":"未搜索"), Toast.LENGTH_SHORT).show();
+                Toast.makeText(mCtx, "开始扫描附近的蓝牙设备。。。", Toast.LENGTH_SHORT).show();
+                //开启蓝牙搜索的状态
+                BlueToothManager.getInstance().blueToothOperationEvent(mCtx, BlueToothConstants.BLUE_TOOTH_SEARTH);
+                //注册蓝牙广播接收器。
+                Toast.makeText(mCtx, "2蓝牙搜索状态为："+(BluetoothAdapter.getDefaultAdapter().isDiscovering() ? "搜索中":"未搜索"), Toast.LENGTH_SHORT).show();
+            }
+
+        });
+
         //初始化蓝牙列表
         recyclerView_BlueToothDevices = (RecyclerView) findViewById(R.id.recyclerView_BlueToothDevices);
         lv_BlueToothDevices = (ListView) findViewById(R.id.lv_BlueToothDevices);
-        devices = mIBlueToothPresenter.getBlueToothDevices();
+        //devices = mIBlueToothPresenter.getBlueToothDevices();
         adpter = new CommonAdapter<BluetoothDevice>(this,devices,R.layout.device_item) {
             @Override
             public void convert(ViewHolder viewHolder, BluetoothDevice itemBean) {
@@ -120,9 +192,20 @@ public class BlueToothActivity extends AppCompatActivity implements IBlueToothVi
         recyclerAdpter = new RecyclerViewCommonAdapter<BluetoothDevice>(this,R.layout.device_item,devices) {
 
             @Override
-            public void convert(com.kemov.vam.bluetoothtest.commons.recyclerview.CommonAdapterHelper.ViewHolder holder, BluetoothDevice device) {
+            public void convert(com.kemov.vam.bluetoothtest.commons.recyclerview.CommonAdapterHelper.ViewHolder holder, final BluetoothDevice device) {
                 holder.setText(R.id.tv_bltName, device.getName());
                 holder.setText(R.id.tv_bltAddr, device.getAddress());
+                holder.setOnItemClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        new Thread(new Runnable() {
+                            @Override
+                            public void run() {
+                                BlueToothManager.getInstance().createBond(device, handler);
+                            }
+                        }).start();
+                    }
+                });
             }
         };
         recyclerView_BlueToothDevices.setAdapter(recyclerAdpter);
@@ -161,6 +244,40 @@ public class BlueToothActivity extends AppCompatActivity implements IBlueToothVi
                     /*&& recyclerAdpter.isShowFooter()*/) {
                 //加载更多
                 //扫描蓝牙
+                new Thread(){
+                    @Override
+                    public void run() {
+                        try {
+                            sleep(3000);
+                            //mSwipeRefreshWidget.setRefreshing(false);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }.start();
+            }
+        }
+    };
+
+    private Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case 1://搜索蓝牙
+                    break;
+                case 2://蓝牙可以被搜索
+                    break;
+                case 3://设备已经接入
+                    BluetoothDevice device = (BluetoothDevice) msg.obj;
+                    Toast.makeText(BlueToothActivity.this, "设备" + device.getName() + "已经接入", Toast.LENGTH_LONG).show();
+                    break;
+                case 4://已连接某个设备
+                    BluetoothDevice device1 = (BluetoothDevice) msg.obj;
+                    Toast.makeText(BlueToothActivity.this, "已连接" + device1.getName() + "设备", Toast.LENGTH_LONG).show();
+                    break;
+                case 5:
+
+                    break;
             }
         }
     };
