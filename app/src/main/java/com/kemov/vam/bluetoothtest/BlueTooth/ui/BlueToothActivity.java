@@ -202,7 +202,10 @@ public class BlueToothActivity extends AppCompatActivity implements IBlueToothVi
                         new Thread(new Runnable() {
                             @Override
                             public void run() {
+                                //未配对过的，可以通过配对连接。
                                 BlueToothManager.getInstance().createBond(device, handler);
+
+                                //但是已经配对过的却无法连接
                             }
                         }).start();
                     }
@@ -302,5 +305,11 @@ public class BlueToothActivity extends AppCompatActivity implements IBlueToothVi
     @Override
     public void showSnackBar(String msg) {
         Snackbar.make(bluetooth_rootLayout,msg,Snackbar.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onDestroy() {
+        mCtx.unregisterReceiver(BlueToothManager.getInstance().searchDevices);
+        super.onDestroy();
     }
 }

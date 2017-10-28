@@ -115,6 +115,10 @@ public class BlueToothManager {
                 //你应当确保在调用connect()时设备没有执行搜索设备的操作。
                 // 如果搜索设备也在同时进行，那么将会显著地降低连接速率，并很大程度上会连接失败。
                 mBluetoothSocket.connect();
+            }else {
+                //如果连接着，断开？？
+                mBluetoothSocket.close();
+                mBluetoothSocket.connect();
             }
             Log.d("blueTooth", "已经链接");
             if (handler == null) return;
@@ -149,7 +153,7 @@ public class BlueToothManager {
     /**
      * 蓝牙接收广播
      */
-    private BroadcastReceiver searchDevices = new BroadcastReceiver() {
+    public BroadcastReceiver searchDevices = new BroadcastReceiver() {
         //接收
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
