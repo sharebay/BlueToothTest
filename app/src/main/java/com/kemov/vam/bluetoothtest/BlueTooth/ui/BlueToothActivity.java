@@ -117,11 +117,12 @@ public class BlueToothActivity extends AppCompatActivity implements IBlueToothVi
         mLayoutManager = new LinearLayoutManager(this);
         recyclerView_BlueToothDevices.setLayoutManager(mLayoutManager);
         recyclerView_BlueToothDevices.addOnScrollListener(mOnScrollListener);
-        recyclerAdpter = new RecyclerViewCommonAdapter(this,R.layout.device_item,devices) {
+        recyclerAdpter = new RecyclerViewCommonAdapter<BluetoothDevice>(this,R.layout.device_item,devices) {
 
             @Override
-            public void convert(com.kemov.vam.bluetoothtest.commons.recyclerview.CommonAdapterHelper.ViewHolder holder, Object o) {
-
+            public void convert(com.kemov.vam.bluetoothtest.commons.recyclerview.CommonAdapterHelper.ViewHolder holder, BluetoothDevice device) {
+                holder.setText(R.id.tv_bltName, device.getName());
+                holder.setText(R.id.tv_bltAddr, device.getAddress());
             }
         };
         recyclerView_BlueToothDevices.setAdapter(recyclerAdpter);
