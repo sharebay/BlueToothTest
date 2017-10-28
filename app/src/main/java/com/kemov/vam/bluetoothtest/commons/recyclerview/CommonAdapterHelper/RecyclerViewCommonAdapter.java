@@ -43,4 +43,8 @@ public abstract class RecyclerViewCommonAdapter<T> extends RecyclerView.Adapter<
     public int getItemCount() {
         return mDatas.size();
     }
+
+    public void setData(List<T> mDatas){
+        this.mDatas = mDatas;
+    }
 }

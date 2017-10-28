@@ -95,7 +95,8 @@ public class BlueToothActivity extends AppCompatActivity implements IBlueToothVi
                             Toast.makeText(mCtx, "查找到一个蓝牙设备"+device.getName(), Toast.LENGTH_SHORT).show();
                         }
                         if (adpter != null){
-                            adpter.notifyDataSetChanged();
+                            //adpter.setData(devices);
+                            recyclerAdpter.notifyDataSetChanged();
                         }
                     }
 
@@ -170,7 +171,7 @@ public class BlueToothActivity extends AppCompatActivity implements IBlueToothVi
         //初始化蓝牙列表
         recyclerView_BlueToothDevices = (RecyclerView) findViewById(R.id.recyclerView_BlueToothDevices);
         lv_BlueToothDevices = (ListView) findViewById(R.id.lv_BlueToothDevices);
-        //devices = mIBlueToothPresenter.getBlueToothDevices();
+        devices = mIBlueToothPresenter.getBlueToothDevices();
         adpter = new CommonAdapter<BluetoothDevice>(this,devices,R.layout.device_item) {
             @Override
             public void convert(ViewHolder viewHolder, BluetoothDevice itemBean) {
